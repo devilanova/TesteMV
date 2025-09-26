@@ -17,6 +17,7 @@ type
   private
     { Private declarations }
     FFuncoes: TFuncoes;
+    procedure Validar;
   public
     { Public declarations }
     property Funcoes: TFuncoes read FFuncoes;
@@ -33,6 +34,7 @@ procedure TfrmCadFuncoes.btnGravarClick(Sender: TObject);
 begin
   inherited;
   try
+    Validar;
     FFuncoes.Nome := edtFuncao.Text;
     if FFuncoes.Id = 0 then
       dmFuncoes.InsertFuncoes(FFuncoes)
@@ -47,6 +49,12 @@ begin
     end;
 
   end;
+end;
+
+procedure TfrmCadFuncoes.Validar;
+begin
+  if (trim(edtFuncao.Text) = EmptyStr) then
+    raise Exception.Create('Digite o nome da função.');
 end;
 
 procedure TfrmCadFuncoes.FormCreate(Sender: TObject);

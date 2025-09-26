@@ -12,7 +12,7 @@ Fone de Contato: 51995859881
 
 5 - Sim, utilizei em ordem de maior para o menor uso, devexpress, fastreport, devexpress e ACBR na geração de código de barras em boletos.
 
-6 - Na maior parte usei o FastReport, mas já usei rave e crystal.
+6 - Na maior parte desses 15 anos, usei o FastReport, mas já usei rave e crystal.
 
 7 - Sim, Delphi, c# e python.
 
@@ -20,4 +20,4 @@ Fone de Contato: 51995859881
 
 14 - Usando inner join com as primary keys.
 
-Restante das respostas estão na pasta querys no github.
+Restante das respostas estão na pasta querys no github, https://github.com/devilanova/TesteMV
