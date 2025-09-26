@@ -1,0 +1,23 @@
+Nome: William da Silva Vilanova
+E-mail: desenvolvimento@wsvilanova.com.br
+Fone de Contato: 51995859881
+
+1 - Trabalho com delphi há mais de 15 anos, trabalhei com c# 6 anos e estudo python agora.
+
+2 - Comecei com firebird, no trabalho usei mysql e sql server.
+
+3 - Sim, em mysql e sql server.
+
+4 - Sim, fazem 15 anos, empresas de cobranças, sistema de justificativa de falhas na gm e atendimento e cobranças em seguradora, na maioria das empresas foi criação de relatórios, otimizações de sistemas legados e manutenção em geral. 
+
+5 - Sim, utilizei em ordem de maior para o menor uso, devexpress, fastreport, devexpress e ACBR na geração de código de barras em boletos.
+
+6 - Na maior parte usei o FastReport, mas já usei rave e crystal.
+
+7 - Sim, Delphi, c# e python.
+
+8 - Sim, cvs, svn e git.
+
+14 - Usando inner join com as primary keys.
+
+Restante das respostas estão na pasta querys no github.
