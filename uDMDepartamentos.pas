@@ -50,7 +50,6 @@ type
     FPesqDepartamento: string;
   public
     { Public declarations }
-    procedure Validar;
     procedure Pesquisar(const pValor: string);
     procedure InsertDepartamentos(pValores: TDepartamentos);
     procedure UpdateDepartamentos(pValores: TDepartamentos);
@@ -95,11 +94,14 @@ var
   lId: integer;
 begin
   try
-    Validar;
     lId := dsPesqDepartamentos.DataSet.FieldByName('id_departamento').AsInteger;
     qryDeleteDepartamentos.Params.ParamByName('id_departamento').Value := lId;
     qryDeleteDepartamentos.ExecSQL;
   except
+    on e: EDatabaseError do
+    begin
+      raise Exception.Create('Exclusão não permitida, item associado a outros cadastros!');
+    end;
     on e: exception do
     begin
       raise;
@@ -126,7 +128,6 @@ end;
 procedure TdmDepartamentos.UpdateDepartamentos(pValores: TDepartamentos);
 begin
   try
-    Validar;
     qryUpdateDepartamentos.Params.ParamByName('id_departamento').Value := pValores.Id;
     qryUpdateDepartamentos.Params.ParamByName('nm_departamento').Value := pValores.Nome;
     qryUpdateDepartamentos.Params.ParamByName('local').Value := pValores.Local;
@@ -140,16 +141,6 @@ begin
   end;
 end;
 
-procedure TdmDepartamentos.Validar;
-var
-  lRegistros: boolean;
-begin
-  lRegistros := False;
-  if dsPesqDepartamentos.DataSet.State = dsBrowse then
-    lRegistros := dsPesqDepartamentos.DataSet.RecordCount > 0;
-  if not lRegistros then
-    raise Exception.Create('Selecione um registro!');
-end;
 { TDepartamentos }
 
 constructor TDepartamentos.Create;

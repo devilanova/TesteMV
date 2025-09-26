@@ -4,16 +4,21 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uDepartamentos;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uDepartamentos, uFuncoes,
+  uEmpregados;
 
 type
   TfrmPrincipal = class(TForm)
     menuPrincipal: TMainMenu;
     itemCadastros: TMenuItem;
-    itemFuncoesEmpregados: TMenuItem;
+    itemFuncoes: TMenuItem;
     itemDepartamentos: TMenuItem;
     itemEmpregados: TMenuItem;
+    itemRelatorios: TMenuItem;
+    itemRelEmpregados: TMenuItem;
     procedure itemDepartamentosClick(Sender: TObject);
+    procedure itemFuncoesClick(Sender: TObject);
+    procedure itemEmpregadosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,6 +39,26 @@ begin
     frmDepartamentos.ShowModal;
   finally
     FreeAndNil(frmDepartamentos);
+  end;
+end;
+
+procedure TfrmPrincipal.itemEmpregadosClick(Sender: TObject);
+begin
+  try
+    frmEmpregados := TfrmEmpregados.Create(self);
+    frmEmpregados.ShowModal;
+  finally
+    FreeAndNil(frmEmpregados);
+  end;
+end;
+
+procedure TfrmPrincipal.itemFuncoesClick(Sender: TObject);
+begin
+  try
+    frmFuncoes := TfrmFuncoes.Create(self);
+    frmFuncoes.ShowModal;
+  finally
+    FreeAndNil(frmFuncoes);
   end;
 end;
 

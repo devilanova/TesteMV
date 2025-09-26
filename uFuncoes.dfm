@@ -1,5 +1,5 @@
-inherited frmDepartamentos: TfrmDepartamentos
-  Caption = 'Departamentos'
+inherited frmFuncoes: TfrmFuncoes
+  Caption = 'Fun'#231#245'es'
   StyleElements = [seFont, seClient, seBorder]
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -7,22 +7,16 @@ inherited frmDepartamentos: TfrmDepartamentos
   inherited pnlCentral: TPanel
     StyleElements = [seFont, seClient, seBorder]
     inherited dbGrid: TDBGrid
-      DataSource = dmDepartamentos.dsPesqDepartamentos
+      DataSource = dmFuncoes.dsPesqFuncoes
       Columns = <
         item
           Expanded = False
-          FieldName = 'id_departamento'
+          FieldName = 'id_funcao'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'nm_departamento'
-          Width = 150
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'local'
+          FieldName = 'nm_funcao'
           Width = 150
           Visible = True
         end>
@@ -50,6 +44,9 @@ inherited frmDepartamentos: TfrmDepartamentos
     end
     inherited btnEditar: TButton
       OnClick = btnEditarClick
+    end
+    inherited btnExcluir: TButton
+      OnClick = btnExcluirClick
     end
   end
 end

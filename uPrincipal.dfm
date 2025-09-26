@@ -18,15 +18,23 @@ object frmPrincipal: TfrmPrincipal
     Top = 16
     object itemCadastros: TMenuItem
       Caption = 'Cadastros'
-      object itemFuncoesEmpregados: TMenuItem
-        Caption = '&Fun'#231#245'es Empregados'
+      object itemEmpregados: TMenuItem
+        Caption = '&Empregados'
+        OnClick = itemEmpregadosClick
       end
       object itemDepartamentos: TMenuItem
         Caption = '&Departamentos'
         OnClick = itemDepartamentosClick
       end
-      object itemEmpregados: TMenuItem
-        Caption = '&Empregados'
+      object itemFuncoes: TMenuItem
+        Caption = '&Fun'#231#245'es'
+        OnClick = itemFuncoesClick
+      end
+    end
+    object itemRelatorios: TMenuItem
+      Caption = 'Relat'#243'rios'
+      object itemRelEmpregados: TMenuItem
+        Caption = 'Empregados'
       end
     end
   end

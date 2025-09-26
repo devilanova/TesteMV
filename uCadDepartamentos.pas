@@ -4,19 +4,15 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, uDMDepartamentos;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uDadosGeral, Vcl.StdCtrls, Vcl.ExtCtrls,
+  uDMDepartamentos;
 
 type
-  TfrmCadDepartamentos = class(TForm)
-    pnlRodape: TPanel;
-    pnlCentral: TPanel;
-    btnGravar: TButton;
-    btnCancelar: TButton;
+  TfrmCadDepartamentos = class(TfrmDadosGeral)
     lbNome: TLabel;
     lbLocal: TLabel;
     edtNome: TEdit;
     cmbLocal: TComboBox;
-    procedure btnCancelarClick(Sender: TObject);
     procedure btnGravarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -35,10 +31,6 @@ implementation
 
 {$R *.dfm}
 
-procedure TfrmCadDepartamentos.btnCancelarClick(Sender: TObject);
-begin
-  Close;
-end;
 
 procedure TfrmCadDepartamentos.btnGravarClick(Sender: TObject);
 begin
@@ -71,5 +63,4 @@ begin
   edtNome.Text := FDepartamentos.Nome;
   cmbLocal.Text := FDepartamentos.Local;
 end;
-
 end.
