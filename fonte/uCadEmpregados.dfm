@@ -13,9 +13,8 @@ inherited frmCadEmpregados: TfrmCadEmpregados
     Width = 446
     Height = 240
     StyleElements = [seFont, seClient, seBorder]
-    ExplicitLeft = 8
-    ExplicitWidth = 624
-    ExplicitHeight = 400
+    ExplicitWidth = 446
+    ExplicitHeight = 240
     object lbNome: TLabel
       Left = 62
       Top = 16
@@ -119,16 +118,14 @@ inherited frmCadEmpregados: TfrmCadEmpregados
     Top = 240
     Width = 446
     StyleElements = [seFont, seClient, seBorder]
-    ExplicitTop = 400
-    ExplicitWidth = 624
     inherited btnGravar: TButton
       Left = 352
       OnClick = btnGravarClick
-      ExplicitLeft = 530
+      ExplicitLeft = 352
     end
     inherited btnCancelar: TButton
       Left = 271
-      ExplicitLeft = 449
+      ExplicitLeft = 271
     end
   end
 end

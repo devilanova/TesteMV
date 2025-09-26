@@ -1,40 +1,42 @@
 inherited frmCadDepartamentos: TfrmCadDepartamentos
   Caption = 'Cadastro Departamentos'
   ClientHeight = 148
-  ClientWidth = 397
+  ClientWidth = 477
   StyleElements = [seFont, seClient, seBorder]
   OnCreate = FormCreate
   OnShow = FormShow
-  ExplicitWidth = 413
+  ExplicitWidth = 493
   ExplicitHeight = 187
   TextHeight = 15
   inherited pnlCentral: TPanel
-    Width = 397
+    Width = 477
     Height = 107
     StyleElements = [seFont, seClient, seBorder]
-    object lbNome: TLabel
-      Left = 32
+    ExplicitWidth = 397
+    ExplicitHeight = 107
+    object lbDepartamento: TLabel
+      Left = 8
       Top = 16
-      Width = 36
+      Width = 79
       Height = 15
-      Caption = 'Nome:'
+      Caption = 'Departamento:'
     end
     object lbLocal: TLabel
-      Left = 37
+      Left = 56
       Top = 45
       Width = 31
       Height = 15
       Caption = 'Local:'
     end
-    object edtNome: TEdit
-      Left = 74
+    object edtDepartamento: TEdit
+      Left = 93
       Top = 13
       Width = 301
       Height = 23
       TabOrder = 0
     end
     object cmbLocal: TComboBox
-      Left = 74
+      Left = 93
       Top = 42
       Width = 301
       Height = 23
@@ -48,14 +50,18 @@ inherited frmCadDepartamentos: TfrmCadDepartamentos
   end
   inherited pnlRodape: TPanel
     Top = 107
-    Width = 397
+    Width = 477
     StyleElements = [seFont, seClient, seBorder]
+    ExplicitTop = 107
+    ExplicitWidth = 397
     inherited btnGravar: TButton
-      Left = 303
+      Left = 383
       OnClick = btnGravarClick
+      ExplicitLeft = 303
     end
     inherited btnCancelar: TButton
-      Left = 222
+      Left = 302
+      ExplicitLeft = 222
     end
   end
 end

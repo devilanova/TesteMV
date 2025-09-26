@@ -2,7 +2,6 @@ inherited frmCadFuncoes: TfrmCadFuncoes
   Caption = 'Cadastro de Fun'#231#227'o'
   ClientHeight = 100
   ClientWidth = 375
-  Position = poDesktopCenter
   StyleElements = [seFont, seClient, seBorder]
   OnCreate = FormCreate
   OnShow = FormShow
@@ -13,8 +12,8 @@ inherited frmCadFuncoes: TfrmCadFuncoes
     Width = 375
     Height = 59
     StyleElements = [seFont, seClient, seBorder]
-    ExplicitWidth = 624
-    ExplicitHeight = 400
+    ExplicitWidth = 375
+    ExplicitHeight = 59
     object lbFuncao: TLabel
       Left = 10
       Top = 16
@@ -34,16 +33,14 @@ inherited frmCadFuncoes: TfrmCadFuncoes
     Top = 59
     Width = 375
     StyleElements = [seFont, seClient, seBorder]
-    ExplicitTop = 400
-    ExplicitWidth = 624
     inherited btnGravar: TButton
       Left = 281
       OnClick = btnGravarClick
-      ExplicitLeft = 530
+      ExplicitLeft = 281
     end
     inherited btnCancelar: TButton
       Left = 200
-      ExplicitLeft = 449
+      ExplicitLeft = 200
     end
   end
 end

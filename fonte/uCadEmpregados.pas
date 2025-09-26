@@ -28,6 +28,7 @@ type
   private
     { Private declarations }
     FEmpregados: TEmpregados;
+    procedure Validar;
   public
     { Public declarations }
     property Empregados: TEmpregados read FEmpregados;
@@ -44,6 +45,7 @@ procedure TfrmCadEmpregados.btnGravarClick(Sender: TObject);
 begin
   inherited;
   try
+    Validar;
     FEmpregados.NmEmpregado := edtNome.Text;
     FEmpregados.CodDepartamento := cmbDepartamento.KeyValue;
     FEmpregados.CodEmpFuncao := cmbFuncao.KeyValue;
@@ -63,6 +65,16 @@ begin
     end;
 
   end;
+end;
+
+procedure TfrmCadEmpregados.Validar;
+begin
+  if (trim(edtNome.Text) = EmptyStr) then
+    raise Exception.Create('Digite o nome do empregado.');
+  if (cmbDepartamento.KeyValue = 0) then
+    raise Exception.Create('Selecione um departamento.');
+  if (cmbFuncao.KeyValue = 0) then
+    raise Exception.Create('Selecione uma função.');
 end;
 
 procedure TfrmCadEmpregados.FormClose(Sender: TObject;

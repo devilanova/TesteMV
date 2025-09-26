@@ -9,9 +9,9 @@ uses
 
 type
   TfrmCadDepartamentos = class(TfrmDadosGeral)
-    lbNome: TLabel;
+    lbDepartamento: TLabel;
     lbLocal: TLabel;
-    edtNome: TEdit;
+    edtDepartamento: TEdit;
     cmbLocal: TComboBox;
     procedure btnGravarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -19,6 +19,7 @@ type
   private
     { Private declarations }
     FDepartamentos: TDepartamentos;
+    procedure Validar;
   public
     { Public declarations }
     property Departamentos: TDepartamentos read FDepartamentos;
@@ -35,7 +36,8 @@ implementation
 procedure TfrmCadDepartamentos.btnGravarClick(Sender: TObject);
 begin
   try
-    FDepartamentos.Nome := edtNome.Text;
+    Validar;
+    FDepartamentos.Nome := edtDepartamento.Text;
     FDepartamentos.Local := cmbLocal.Text;
     if FDepartamentos.Id = 0 then
       dmDepartamentos.InsertDepartamentos(FDepartamentos)
@@ -53,6 +55,12 @@ begin
 
 end;
 
+procedure TfrmCadDepartamentos.Validar;
+begin
+  if (trim(edtDepartamento.Text) = EmptyStr) then
+    raise Exception.Create('Digite o nome do departamento.');
+end;
+
 procedure TfrmCadDepartamentos.FormCreate(Sender: TObject);
 begin
   FDepartamentos := TDepartamentos.Create;
@@ -60,7 +68,7 @@ end;
 
 procedure TfrmCadDepartamentos.FormShow(Sender: TObject);
 begin
-  edtNome.Text := FDepartamentos.Nome;
+  edtDepartamento.Text := FDepartamentos.Nome;
   cmbLocal.Text := FDepartamentos.Local;
 end;
 end.
